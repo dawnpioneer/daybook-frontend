@@ -11,9 +11,3 @@
     }
   }
 </script>
-
-<style scoped>
-  .container {
-    margin-bottom: 16px;
-  }
-</style>

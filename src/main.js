@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueResource from 'vue-resource'
 import App from './App'
 import router from './router'
-import 'hack'
 import vuetify from './plugins/vuetify'
 
 Vue.use(VueResource)
