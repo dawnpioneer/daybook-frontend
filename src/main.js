@@ -1,10 +1,18 @@
 import Vue from 'vue'
-import App from './App.vue'
-import vuetify from './plugins/vuetify';
+import VueResource from 'vue-resource'
+import App from './App'
+import router from './router'
+import 'hack'
+import vuetify from './plugins/vuetify'
 
+Vue.use(VueResource)
 Vue.config.productionTip = false
 
+/* eslint-disable no-new */
 new Vue({
+  el: '#app',
+  router,
+  template: '<App/>',
   vuetify,
-  render: h => h(App)
-}).$mount('#app')
+  components: { App }
+})
