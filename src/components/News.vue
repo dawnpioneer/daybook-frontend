@@ -13,15 +13,32 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
-    props: {
-      source: String
+    name: 'apidata',
+    // Data is used to define the attributes of the returned data
+    data () {
+      return {
+        items: null,
+        error: null
+      }
     },
-    data: () => ({
-      items: [
-        { title: '2019/12/22', content: '公告1' },
-        { title: '2019/12/06', content: '公告2' }
-      ]
-    })
+    // Method for defining js
+    methods: {
+      details: function () {
+        return this.site
+      }
+    },
+    mounted () {
+      axios.get('http://localhost:8000/v1/news').then(
+        response => (
+          this.items = response.data.result
+        )
+      ).catch(
+        error => (
+          this.error = error
+        )
+      )
+    }
   }
 </script>
